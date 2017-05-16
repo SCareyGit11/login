@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Registration</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+	<h2> Please Register </h2>
+	<form action="{% url 'register' %}" method="post" class="form-group col-sm-4">
+		{% csrf_token %}
+		{{ regform.as_p }}
+		<label> Confirm Password </label>
+		<input type="password" name="confirm_password"><br>
+		<input type="submit" value="Register">
+	</form>
+</body>
+</html>
